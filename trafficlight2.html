@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Traffic Light</title>
+<style>
+#city{ width:100%; max-width:1200px; background:url(images/cityroad.png); height:600px; margin:0 auto; position:relative; overflow:hidden}
+img#car{ position:absolute; top:490px; left:-100px; opacity:1}
+img#car2{ position:absolute; top:490px; left:500px; opacity:0}
+#trafficlight{ position:relative; background:#333; width:50px; height:100px; top:250px; left:600px}
+#redlight{ width:20px; height:20px; background:#666; position:absolute; border-radius:50%; left:14px; top:5px;}
+#yellowlight{ width:20px; height:20px; background:#666; position:absolute; border-radius:50%; left:14px; top:40px;}
+#greenlight{ width:20px; height:20px; background:#666; position:absolute; border-radius:50%; left:14px; top:75px;}
+@keyframes car{
+	from{ left:-100px;}
+	to{left:500px;}
+	}
+@keyframes red{
+	0%{ background:#666;}
+	16.6%{background:#666;}
+	33.3%{background:#f00;}
+	66.4%{background:#f00;}
+	83.3%{background:#666;}
+	100%{background:#666;}
+	}
+@keyframes green{
+	0%{ background:#666;}
+	16.6%{background:#666;}
+	33.3%{background:#0C0;}
+	66.4%{background:#0C0;}
+	83.3%{background:#666;}
+	100%{background:#666;}
+	}
+@keyframes car2{
+	from{ left:500px;}
+	to{left:1400px;}
+	}
+</style>
+</head>
+
+<body onLoad="moveCar()">
+<div id="city">
+	<img src="images/carred.png" id="car">
+    <img src="images/carred.png" id="car2">
+	<div id="trafficlight">
+    	<div id="redlight"></div>
+        <div id="yellowlight"></div>
+        <div id="greenlight"></div>
+    </div>
+</div>
+<script>
+	function moveCar(){
+		document.getElementById("car").style.animation="2s car 1s linear forwards, 2s car2 7s linear";
+		document.getElementById("redlight").style.animation="6s red 1s linear ";
+		document.getElementById("greenlight").style.animation="6s green 5s ease";
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+#carromboard{ width:500px; height:500px; margin:0 auto; background:url(images/carrom.jpg); position:relative;}
+#striker{width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #666;
+	position: absolute;
+	left: 170px;
+	top: 365px;
+	
+}
+#gotti{width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #039;
+	position: absolute;
+	left: 170px;
+	top: 165px
+}
+@keyframes strikermove{
+	from{top:365px;}
+	to{ top:165px;}
+	}
+@keyframes gottimove{
+	from{top:165px;left: 170px}
+	to{ top:56px;left:56px}
+	}
+</style>
+
+</head>
+	
+<body>
+<div id="carromboard">
+	<div id="striker" onClick="movestriker()"></div>
+	<div id="gotti"></div>
+</div>
+<script>
+function movestriker(){
+document.getElementById("striker").style.animation="1s strikermove linear forwards";
+document.getElementById("gotti").style.animation="1s gottimove 1s linear forwards";
+
+}
+</script>
+</body>
+</html>

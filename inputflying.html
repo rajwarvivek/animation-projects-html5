@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Input Animations</title>
+<style>
+#form{ width:500px; background: #006; padding:30px 20px; margin: 0 auto; position:relative; height:300px}
+#form h2{ color:white;}
+#form input, textarea{ width:96%; margin-bottom:10px;  box-sizing:border-box; padding:10px }
+#form input[type=text]{ position: absolute; left:-1000px; top:100px}
+#form input[type=email]{ position: absolute; left:1000px;top:150px}
+#form input[type=tel]{ position: absolute; left:-1000px;top:200px}
+#form textarea{ position: absolute; left:1000px;top:250px}
+
+@keyframes moveRight{
+	from{ left:-1000px;}
+	to{left:10px;}
+}
+@keyframes moveLeft{
+	from{ left:1000px;}
+	to{left:10px;}
+}
+</style>
+</head>
+
+<body onLoad="moveinputs()">
+<div id="form">
+	<h2>Sign Up Form</h2>
+	<form>
+	<input type="text" placeholder="your name" id="name"><br>
+    <input type="email" placeholder="your email" id="email"><br>
+    <input type="tel" placeholder="your phone" id="phone"><br>
+    <textarea placeholder="your message" id="message"></textarea>
+    </form>
+</div>
+<script>
+function moveinputs(){
+	document.getElementById("name").style.animation="2s moveRight 1s ease forwards";	
+	document.getElementById("email").style.animation="2s moveLeft 3s ease forwards";
+	document.getElementById("phone").style.animation="2s moveRight 5s ease forwards";
+	document.getElementById("message").style.animation="2s moveLeft 7s ease forwards";
+}
+
+
+</script>
+</body>
+</html>

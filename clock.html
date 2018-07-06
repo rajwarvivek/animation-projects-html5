@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+	body{ margin:0px; padding:0px; background: brown; text-align:center;}
+	.clock{ width:400px; height:400px; background:radial-gradient(#e66465, #9198e5); border-radius:50%; display:inline-block; border:30px solid black}
+	#sec{width:10px; height:200px; background:#039;  left:195px; z-index:3; animation: secHand 60s linear infinite;}
+	#min{width:14px; height:200px; background: #096;  left:193px; top:-200px;z-index:2;animation: minHand 3600s linear infinite; }
+	#hours{width:20px; height:180px; background:#C60;  left:190px;top:-379px;z-index:1;animation: hoursHand 86400s linear infinite; }
+	#sec, #min, #hours{ transform-origin:bottom;border-radius:10px; position:relative;}
+	
+	
+	@keyframes secHand{
+		from{ transform:rotateZ(0deg)}
+		to{transform:rotateZ(360deg)}
+		}
+	@keyframes minHand{
+		from{ transform:rotateZ(0deg)}
+		to{transform:rotateZ(360deg)}
+		}
+	@keyframes hoursHand{
+		from{ transform:rotateZ(0deg)}
+		to{transform:rotateZ(360deg)}
+		}
+</style>
+</head>
+
+<body>
+<div class="clock">
+
+	<div id="sec"></div>
+    <div id="min"></div>
+	<div id="hours"></div>
+
+</div>
+
+</body>
+</html>
